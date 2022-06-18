@@ -1,4 +1,4 @@
-from creational.singleton.SingletonType import SingletonType
+from creational.singleton.singleton_type import SingletonType
 
 
 class Context(metaclass=SingletonType):
