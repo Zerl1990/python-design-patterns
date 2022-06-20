@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 from creational.abstract_factory.villains.villain import Villain
 
 
-class Hero:
+class Hero(ABC):
     def __init__(self, name: str):
         self.name = name
 

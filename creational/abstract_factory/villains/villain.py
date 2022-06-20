@@ -1,7 +1,7 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 
 
-class Villain:
+class Villain(ABC):
     @abstractmethod
     def action(self):
         pass
