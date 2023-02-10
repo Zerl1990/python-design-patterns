@@ -11,9 +11,5 @@ class FileServer(Server):
         print(f"Booting the {self.name}")
         self.state = State.RUNNING
 
-    def kill(self, restart: bool = True):
-        print(f"Killing {self.name}")
-        self.state = State.RESTART if restart else State.ZOMBIE
-
     def create_file(self, user: str, name: str, permission: int):
         print(f"{self.name} trying to create the file {name} for user {user} with permission {permission}")

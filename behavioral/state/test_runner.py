@@ -2,6 +2,7 @@ from statemachine import StateMachine, State
 
 
 class TestRunner(StateMachine):
+    # State
     _queue = State("Queue", initial=True)
     _init = State("Init")
     _running = State("Running")
@@ -9,12 +10,14 @@ class TestRunner(StateMachine):
     _failed = State("Failed")
     _passed = State("Passed")
 
+    # Event
     start = _queue.to(_init)
     run = _init.to(_running)
     ignored = _running.to(_skipped)
     failure = _running.to(_failed)
     success = _running.to(_passed)
 
+    # Event Listeners
     def on_start(self):
         print("Starting new test case")
 

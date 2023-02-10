@@ -14,6 +14,6 @@ class CreateFileCommand(BaseCommand):
             file.write(self._initial_content)
 
     def undo(self):
-        self.log(f"[UNDO - CREATE FILE] {self._path} with header {self._header}")
+        self.log(f"[UNDO - CREATE FILE] {self._path} with content {self._initial_content}")
         delete = DeleteFileCommand(self._path)
         delete.execute()

@@ -2,6 +2,7 @@ from collections import namedtuple
 
 Student = namedtuple("Student", ["f_name", "l_name", "identifier"])
 
+
 class ClassRoomIterator:
     def __init__(self, students):
         self._students = students
@@ -35,5 +36,5 @@ if __name__ == "__main__":
     for num in range(1, 31):
         class_room.add(Student(f"N{num}", f"L{num}", f"N{num}L{num}"))
     iterator = iter(class_room)
-    while True:
-        print(next(iterator))
+    for element in iterator:
+        print(element)

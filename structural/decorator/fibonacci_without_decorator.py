@@ -11,4 +11,9 @@ def fibonacci(value):
 
 
 if __name__ == "__main__":
-    print(f"Fibonacci 10: {fibonacci(10)}")
+    print(f"Fibonacci 2: {fibonacci(2)}")
+    print("-" * 10)
+    print(f"Fibonacci 3: {fibonacci(3)}")
+    print("-" * 10)
+    print(f"Fibonacci 4: {fibonacci(4)}")
+    print("-" * 10)

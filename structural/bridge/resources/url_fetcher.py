@@ -3,7 +3,7 @@ from structural.bridge.common.resource_content_fetcher import ResourceContentFet
 
 
 class URLFetcher(ResourceContentFetcher):
-    def fetch(self, path):
+    def fetch(self, path: str) -> str:
         resp = requests.get(path)
         if resp.status_code == 200:
-            print(resp.content)
+            return resp.content

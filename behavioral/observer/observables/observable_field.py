@@ -17,7 +17,7 @@ class ObservableField(Observable):
     def value(self, value: object):
         if value.__class__ is self._type:
             self._value = value
-            self.notify(name=self._name, value=self._value, type=self._type)
+            self.notify_all_subscriber(name=self._name, value=self._value, type=self._type)
         else:
             raise ValueError(f"Invalid type provided, valid data type is {self._type}")
 
@@ -27,7 +27,7 @@ class ObservableField(Observable):
     def unsubscribe(self, observer: Observer):
         self._subscribers.remove(observer)
 
-    def notify(self, *args, **kwargs):
+    def notify_all_subscriber(self, *args, **kwargs):
         for subscriber in self._subscribers:
             subscriber: Observer
-            subscriber.notify(*args, **kwargs)
+            subscriber.receive_observable_notification(*args, **kwargs)
